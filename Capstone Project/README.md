@@ -7,7 +7,7 @@
 3_0, 3_1 using the CNN classifier
 
 The execute step:
-1_moive_reviews---> 2_0_short_movie ---> 2_1_twitter application(using sentiment_mod) 
+1_moive_reviews---> 2_0_short_movie ---> 2_1_twitter application(using sentiment_mod.py) 
 
 3_0_short movie deep learning ---> 3_1_CNN_twitter application
 
