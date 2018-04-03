@@ -15770,7 +15770,10 @@ test_{network} = bottleneck_features['test']</code></pre>
 </code></pre>
 <p><strong>Question 5:</strong> Outline the steps you took to get to your final CNN architecture and your reasoning at each step.  Describe why you think the architecture is suitable for the current problem.</p>
 <p><strong>Answer:</strong> 
-I selected the Resnet-50 and followed the steps with the VGG16 model above. I added a global average pooling layer and a dense layer with Softmax activation to classify the output into one of 133 categories.</p>
+I selected the Resnet-50 and followed the steps with the VGG16 model above.</p>
+<p>The original architecture (DogResNet50) applies numerous CONV and POOL layers,and so it don't need to add extra conv and pool layers.</p>
+<p>I added a global average pooling layer and a dense layer with Softmax activation to classify the output into one of 133 categories.</p>
+<p>After using Resnet-50 for transfer learning, we get a accuracy nearly 80%, but for last architecture(VGG16), it only get 41%. Hence, this architecture is more better.</p>
 
 </div>
 </div>
@@ -20907,14 +20910,21 @@ VqxYseJdwP8HNBbTIFojyAYAAAAASUVORK5CYII=
 <h2 id="Step-7:-Test-Your-Algorithm">Step 7: Test Your Algorithm<a class="anchor-link" href="#Step-7:-Test-Your-Algorithm">&#182;</a></h2><p>In this section, you will take your new algorithm for a spin!  What kind of dog does the algorithm think that <strong>you</strong> look like?  If you have a dog, does it predict your dog's breed accurately?  If you have a cat, does it mistakenly think that your cat is a dog?</p>
 <h3 id="(IMPLEMENTATION)-Test-Your-Algorithm-on-Sample-Images!">(IMPLEMENTATION) Test Your Algorithm on Sample Images!<a class="anchor-link" href="#(IMPLEMENTATION)-Test-Your-Algorithm-on-Sample-Images!">&#182;</a></h3><p>Test your algorithm at least six images on your computer.  Feel free to use any images you like.  Use at least two human and two dog images.</p>
 <p><strong>Question 6:</strong> Is the output better than you expected :) ?  Or worse :( ?  Provide at least three possible points of improvement for your algorithm.</p>
-<p><strong>Answer:</strong></p>
+<p><strong>Answer:</strong><br>
+This output is better than I expected. However, one is detected error. The fifth image is a human, but it fail to detect.</p>
+<p>3 improvement can be made:</p>
+<ul>
+<li>Using Data Augumentation can improve the results. </li>
+<li>add more images for a given breed</li>
+<li>improve the face-detector algorithm so that it can increase the accuracy of dectect people face.</li>
+</ul>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[96]:</div>
+<div class="prompt input_prompt">In&nbsp;[97]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## TODO: Execute your algorithm from Step 6 on</span>
